@@ -121,6 +121,7 @@ const termsSlice = createSlice({
                 definition: definition,
             };
             state.terms.push(newTerm);
+            console.log('term state after adding:', state.terms[0]);
         },
         removeTerm: (state, action) => {
             state.terms = state.terms.filter((term) => term.id !== action.payload);

@@ -14,10 +14,11 @@ const flashcardsSlice = createSlice({
                 id: nanoid(), // Generate unique ID
                 title: title,
                 description: description,
-                terms: [], // Initialize terms array
+                terms:terms, // Initialize terms array
                 termsLength: termsLength,
             };
             state.flashcards.push(newFlashcard);
+            console.log('Flashcards state after adding:', state.flashcards);
         },
         removeFlashcard: (state, action) => {
             state.flashcards = state.flashcards.filter((flashcard) => flashcard.id !== action.payload);

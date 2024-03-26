@@ -110,11 +110,12 @@
 
 
 //this is the fine 
+
 import React from 'react';
 
 const TermCard = ({ terms, setTerms }) => {
   // const [terms, setTerms] = useState([{ title: '', definition: '' }]);
-
+  // console.log('Terms in TermCard:', terms);
   const handleInputChange = (index, e) => {
     const { name, value } = e.target;
     const newTerms = [...terms];
@@ -125,13 +126,7 @@ const TermCard = ({ terms, setTerms }) => {
   const handleAddTerm = () => {
     setTerms([...terms, { title: '', definition: '' }]);
   };
-
-  // const handleDeleteTerm = (index) => {
-  //   if (terms.length === 1) return; // Prevent deleting when there's only one term
-  //   const newTerms = [...terms];
-  //   newTerms.splice(index, 1);
-  //   setTerms(newTerms);
-  // };
+ 
   const handleDeleteTerm = (index) => {
     if (terms.length === 1) return; // Prevent deleting when there's only one term
     const newTerms = terms.filter((_, i) => i !== index);
@@ -160,8 +155,10 @@ const TermCard = ({ terms, setTerms }) => {
             placeholder="Enter Term Definition"
             className="border-2 mb-8 w-80 h-10 pl-2 ml-2 rounded-md bg-slate-200 font-semibold"
           />
+          
           {terms.length > 1 && (
-            <button type='button' className="px-2 py-1 bg-neutral-950 ml-10 rounded-md text-white" onClick={() => handleDeleteTerm(index)}>Delete</button>
+            <button type='button' className="px-2 py-1 bg-neutral-950 ml-10 rounded-md text-white"
+             onClick={() => handleDeleteTerm(index)}>Delete</button>
           )}
         </div>
       ))}
@@ -177,5 +174,25 @@ const TermCard = ({ terms, setTerms }) => {
 }
 
 export default TermCard;
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  

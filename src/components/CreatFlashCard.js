@@ -49,8 +49,9 @@
 
 import React, { useState } from 'react';
 import TermCard from './TermCard';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFlashcard } from '../store/flashcardsSlice';
+ 
  
 const CreatFlashCard = () => {
  
@@ -60,23 +61,25 @@ const CreatFlashCard = () => {
 const [terms, setTerms] = useState([{ title: '', definition: '' }]);
 
   const dispatch = useDispatch();
-
+  const flashcards = useSelector(state => state.flashcards.flashcards);
   const handleSubmit = (e) => {
     e.preventDefault();
     const termsLength = terms.length;
+    // console.log('Terms before dispatch:', terms)
     dispatch(addFlashcard({ title: groupName, description, terms,termsLength  }));
+    // console.log('Flashcard created with terms:', terms);
     setGroupName('');
     setDescription('');
     setTerms([{ title: '', definition: '' }]);
   };
-//   }
-
+ 
+console.log('Flashcards state:', flashcards);
   return (
     <div>
 
-    <div className='w-9/12 m-auto mt-2  pl-5 py-5 bg-white shadow-md'>
+    <div className='w-9/12 m-auto mt-2  py-5   '>
       <form onSubmit={handleSubmit}>
-        <div className='flex flex-col '>
+        <div className='flex flex-col shadow-md  p-3 border-2'>
            <label className='text-zinc-500 font-bold text-lg' htmlFor="">Group Name* </label>
            <input type="text" placeholder='Group Name' value={groupName} 
            onChange={(e) => setGroupName(e.target.value)} className='w-80 h-10 pl-2 mt-2 bg-slate-200 font-semibold'/>
@@ -84,7 +87,7 @@ const [terms, setTerms] = useState([{ title: '', definition: '' }]);
            <label className='text-zinc-500 mt-4 font-bold text-lg' htmlFor=""> Add Description* </label>
            <textarea type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Write your thoughts here...' className='w-7/12 h-20 pl-2 mt-2 bg-slate-200 font-semibold'/>
         </div>
-        <div  className='w-9/12 m-auto  pl-5 py-5 bg-white mt-5 shadow-md mb-10'>
+        <div  className=' m-auto  pl-5 py-5 bg-white mt-5 shadow-md mb-10 border-2'>
         <TermCard terms={terms} setTerms={setTerms} />
     </div>
     <div className='flex justify-center mb-10'>
@@ -99,3 +102,16 @@ const [terms, setTerms] = useState([{ title: '', definition: '' }]);
 }
 
 export default CreatFlashCard;
+
+
+
+
+
+
+
+
+
+
+
+
+ 

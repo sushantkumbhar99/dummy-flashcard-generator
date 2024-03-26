@@ -51,10 +51,12 @@ const approuter = createBrowserRouter([
        path: "/MyFlashCards",
        element: <MyFlashCards/>,
      },
-     {
+   
+    {
       path: "/FlashCardDetails/:resId",
       element: <FlashCardDetails/>
-    },
+    }
+    
     ]
     }
 ])

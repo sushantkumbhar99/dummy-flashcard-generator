@@ -102,7 +102,7 @@
 // export default termsSlice.reducer;
 
 
-// This is the basic part 
+// // This is the basic part 
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "@reduxjs/toolkit";
 

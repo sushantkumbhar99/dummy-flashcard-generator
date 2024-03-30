@@ -68,7 +68,10 @@ const MyFlashCards = () => {
 
             <div className='border-2 w-64 h-60 text-center bg-red-100 '>
               <div className='flex  justify-around my-4 '>
-                 <h2 className='text-xl font-bold text-zinc-600'>{flashcard.title}</h2>
+                <h2 className='text-xl font-bold text-zinc-600'>{flashcard.title}</h2>
+                <div>
+                  { flashcard.uploadImage }
+                </div>
                   {   /* Add a button to delete the flashcard */}
                 <button className='bg-black text-white  p-1 rounded-lg' onClick={() => handleDeleteClick(flashcard.id)}>Delete</button>
               </div>

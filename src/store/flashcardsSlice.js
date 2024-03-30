@@ -9,10 +9,11 @@ const flashcardsSlice = createSlice({
     },
     reducers: {
         addFlashcard: (state, action) => {
-            const { title, description, terms, termsLength} = action.payload;
+            const { title, description, uploadImage, terms, termsLength} = action.payload;
             const newFlashcard = {
                 id: nanoid(), // Generate unique ID
                 title: title,
+                uploadImage: uploadImage,
                 description: description,
                 terms:terms, // Initialize terms array
                 termsLength: termsLength,

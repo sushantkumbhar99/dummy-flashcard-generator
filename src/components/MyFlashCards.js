@@ -62,6 +62,15 @@ const MyFlashCards = () => {
     <div>
    
       <div className=' flex w-9/12 m-auto flex-wrap justify-center mt-4 bg-sky-100'>
+
+      {flashcards.length === 0 && (
+    <div className='bg-red-600'>
+      <Link className='bg-red-500 text-white font-semibold py-1 px-2 rounded-lg' to={"/"}>Create</Link>
+    </div>
+  )}
+
+
+
         {flashcards.map(flashcard => (
           <div className=' my-5 mx-2' key={flashcard.id}>
             {console.log(flashcard)}
@@ -84,6 +93,7 @@ const MyFlashCards = () => {
                  </div>
             </div>
 
+        
           </div>
 
         ))}

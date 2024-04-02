@@ -114,7 +114,7 @@ const Carousel = ({ terms }) => {
         <div className=' shadow-xl w-[90%]  ml-5'>
           <div className='h-full w-[100%] ' >
             <p>{terms[currentTermIndex].definition}</p>
-            
+            <img src={terms[currentTermIndex].term_uploadimage} alt="Flashcard_Image" className="w-40" />
           </div>
           <div className='flex p-2 m-4'>
              <button className='  m-4' onClick={handlePrev}>&#60;</button>

@@ -3,7 +3,7 @@
 // import { useDispatch } from 'react-redux';
 // import { addFlashcard } from '../store/flashcardsSlice';
 // const CreatFlashCard = () => {
- 
+
 //   const [groupName,setGroupName]= useState('')
 //   const [description, setDescription]= useState('')
 // const dispatch = useDispatch()
@@ -11,7 +11,7 @@
 //   const handleSubmit=(e)=>{
 //       e.preventDefault()
 //       dispatch(addFlashcard({ groupName, description }));
-    
+
 //      setGroupName('');
 //      setDescription('');
 //   }
@@ -23,15 +23,15 @@
 //       <form onSubmit={handleSubmit}>
 //         <div className='flex flex-col '>
 //            <label className='text-zinc-500 font-bold text-lg' htmlFor="">Group Name* </label>
-//            <input type="text" placeholder='Group Name' value={groupName} 
+//            <input type="text" placeholder='Group Name' value={groupName}
 //            onChange={(e) => setGroupName(e.target.value)} className='w-80 h-10 pl-2 mt-2 bg-slate-200 font-semibold'/>
 
 //            <label className='text-zinc-500 mt-4 font-bold text-lg' htmlFor=""> Add Description* </label>
 //            <textarea type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Write your thoughts here...' className='w-7/12 h-20 pl-2 mt-2 bg-slate-200 font-semibold'/>
 //         </div>
-       
+
 //       </form>
-      
+
 //     </div>
 //     <div  className='w-9/12 m-auto  pl-5 py-5 bg-white mt-5 shadow-md mb-10'>
 //        <TermCard/>
@@ -51,10 +51,9 @@
 // import TermCard from './TermCard';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { addFlashcard } from '../store/flashcardsSlice';
- 
- 
+
 // const CreatFlashCard = () => {
- 
+
 //   const [groupName,setGroupName]= useState('')
 //   const [description, setDescription]= useState('')
 
@@ -72,7 +71,7 @@
 //     setDescription('');
 //     setTerms([{ title: '', definition: '' }]);
 //   };
- 
+
 // console.log('Flashcards state:', flashcards);
 //   return (
 //     <div>
@@ -82,7 +81,7 @@
 
 //         <div className='flex flex-col shadow-md  p-3 border-2'>
 //            <label className='text-zinc-500 font-bold text-lg' htmlFor="">Group Name* </label>
-//            <input type="text" placeholder='Group Name' value={groupName} 
+//            <input type="text" placeholder='Group Name' value={groupName}
 //            onChange={(e) => setGroupName(e.target.value)} className='w-80 h-10 pl-2 mt-2 bg-slate-200 font-semibold'/>
 
 //            <label className='text-zinc-500 mt-4 font-bold text-lg' htmlFor=""> Add Description* </label>
@@ -95,7 +94,7 @@
 //       <button type="submit" className='px-2 py-1 bg-neutral-950 ml-10 rounded-md text-white'>Create </button>
 //     </div>
 //       </form>
-      
+
 //     </div>
 
 //     </div>
@@ -103,10 +102,6 @@
 // }
 
 // export default CreatFlashCard;
-
-
-
-
 
 // import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 // import { useDispatch } from 'react-redux';
@@ -123,9 +118,9 @@
 
 //   const onSubmit = (values, { resetForm }) => {
 //     const termsLength = values.terms.length;
-//     dispatch(addFlashcard({ 
-//       title: values.groupName, 
-//       description: values.description, 
+//     dispatch(addFlashcard({
+//       title: values.groupName,
+//       description: values.description,
 //       terms: values.terms,
 //       termsLength
 //     }));
@@ -191,7 +186,6 @@
 
 // export default CreateFlashCard;
 
-
 // import React from 'react';
 // import { Formik, Form, FieldArray, Field } from 'formik';
 // import { useDispatch } from 'react-redux';
@@ -208,9 +202,9 @@
 //   };
 
 //   const onSubmit = (values, { resetForm }) => {
-//     dispatch(addFlashcard({ 
-//       title: values.groupName, 
-//       description: values.description, 
+//     dispatch(addFlashcard({
+//       title: values.groupName,
+//       description: values.description,
 //       terms: values.terms
 //     }));
 //     resetForm();
@@ -234,7 +228,7 @@
 //             <div className='m-auto pl-5 py-5 bg-white mt-5 shadow-md mb-10 border-2'>
 //             <FieldArray
 //   name="terms"
-//   render={({ push, remove, form: { values } }) => (  
+//   render={({ push, remove, form: { values } }) => (
 //     <TermCard terms={values.terms} push={push} remove={remove} />
 //   )}
 // />
@@ -252,7 +246,6 @@
 // }
 
 // export default CreateFlashCard;
-
 
 // import React from 'react';
 // import { Formik, Form, FieldArray, Field, ErrorMessage } from 'formik';
@@ -282,9 +275,9 @@
 //   });
 
 //   const onSubmit = (values, { resetForm }) => {
-//     dispatch(addFlashcard({ 
-//       title: values.groupName, 
-//       description: values.description, 
+//     dispatch(addFlashcard({
+//       title: values.groupName,
+//       description: values.description,
 //       terms: values.terms
 //     }));
 //     resetForm();
@@ -313,7 +306,7 @@
 //               <div className='m-auto pl-5 py-5 bg-white mt-5 shadow-md mb-10 border-2'>
 //                 <FieldArray
 //                   name="terms"
-//                   render={({ push, remove, form: { values } }) => (  
+//                   render={({ push, remove, form: { values } }) => (
 //                     <TermCard terms={values.terms} push={push} remove={remove} />
 //                   )}
 //                 />
@@ -331,9 +324,6 @@
 // }
 
 // export default CreateFlashCard;
-
-
-// this is the almost done
 
 // import React from 'react';
 // import { Formik, Form, FieldArray, Field, ErrorMessage } from 'formik';
@@ -366,8 +356,7 @@
 //     dispatch(addFlashcard({ 
 //       title: values.groupName, 
 //       description: values.description, 
-//       terms: values.terms,
-//       termsLength : values.terms.length
+//       terms: values.terms
 //     }));
 //     resetForm();
 //   };
@@ -401,6 +390,26 @@
 //             </div>
 
 //             <div className='flex justify-center mb-10'>
+//               <button type="submit" className='px-2 py-1 bg-neutral-950 ml-10 rounded-md text-white'>Create</button>
+//             </div>
+//           </Form>
+//         </Formik>
+//       </div>
+//     </div>
+//   );
+// }
+
+ 
+//             <div className='m-auto pl-5 py-5 bg-white mt-5 shadow-md mb-10 border-2'>
+//               <FieldArray
+//                 name="terms"
+//                 render={({ push, remove, form: { values } }) => (  
+//                   <TermCard terms={values.terms} push={push} remove={remove} />
+//                 )}
+//               />
+//             </div>
+
+//             <div className='flex justify-center mb-10'>
 //               <button type="submit" className='px-2 py-1 bg-neutral-950 ml-10 rounded-md text-white'>Creatte</button>
 //             </div>
 //           </Form>
@@ -411,6 +420,7 @@
 // }
 
 // export default CreateFlashCard;
+ 
 
 
  
